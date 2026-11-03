@@ -17,7 +17,7 @@ Vestax-TR-1-2026.midi.xml
 Vestax-TR-1-scripts.js
 ```
 
-The XML refers to that exact JavaScript filename and the `VestaxTR1` script namespace. Do not rename only one file. Do not install the reference copies in `source-2026/`.
+The XML refers to that exact JavaScript filename and the `VestaxTR1` script namespace. Do not rename only one file. Unmodified source files are not distributed in this repository; source metadata is recorded in [SOURCE.md](../SOURCE.md).
 
 ## 2. Find your mapping folder
 
