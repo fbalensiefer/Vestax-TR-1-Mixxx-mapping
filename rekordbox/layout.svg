@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+<title id="title">Vestax TR-1 to rekordbox: logical mapping design</title>
+<desc id="desc">Schematic zones for two FX units, four deck banks, mixer and browser. Tempo and continuous key knobs are deferred. This is not an exact drawing of the physical front panel.</desc>
+<rect width="1200" height="1200" rx="24" fill="#101827"/>
+<style>text{font-family:Arial,sans-serif;fill:#edf2fa}.title{font-size:30px;font-weight:700}.sub{font-size:16px;fill:#aab9ce}.head{font-size:21px;font-weight:700}.body{font-size:17px}.small{font-size:15px;fill:#bac9dd}</style>
+<text x="40" y="53" class="title">VESTAX TR-1 / REKORDBOX 7</text>
+<text x="40" y="83" class="sub">Native CSV design · four decks · draft / hardware validation pending</text>
+<rect x="40" y="112" width="460" height="195" rx="16" fill="#293c59"/>
+<text x="62" y="146" class="head">FX 1 / MIDI CH 5</text>
+<text x="62" y="177" class="body">Knobs 1–3 → slot depth</text>
+<text x="62" y="205" class="body">Knob 4 → beat value</text>
+<text x="62" y="233" class="body">Buttons → on/off, tap, mode</text>
+<text x="62" y="261" class="body">Select ← / → → effect in slot 1</text>
+<rect x="700" y="112" width="460" height="195" rx="16" fill="#293c59"/>
+<text x="722" y="146" class="head">FX 2 / MIDI CH 7</text>
+<text x="722" y="177" class="body">Knobs 1–3 → slot depth</text>
+<text x="722" y="205" class="body">Knob 4 → beat value</text>
+<text x="722" y="233" class="body">Buttons → on/off, tap, mode</text>
+<text x="722" y="261" class="body">Select ← / → → effect in slot 1</text>
+<rect x="520" y="112" width="160" height="195" rx="16" fill="#293c59"/>
+<text x="542" y="146" class="head">BROWSER</text>
+<text x="542" y="177" class="body">↑ / ↓ tracks</text>
+<text x="542" y="205" class="body">LOAD</text>
+<text x="542" y="233" class="body">to bank</text>
+<text x="542" y="261" class="body">CH 9</text>
+<rect x="40" y="327" width="545" height="295" rx="16" fill="#273851"/>
+<text x="62" y="361" class="head">LEFT BANK  A / C  →  DECK 1 / 3</text>
+<text x="62" y="392" class="body">PLAY · native CUE · SYNC · Master Tempo</text>
+<text x="62" y="420" class="body">LOOP 4 · half/double · in/out · reloop</text>
+<text x="62" y="448" class="body">CUE BACK / FWD → −4 / +4 beats</text>
+<text x="62" y="476" class="body">BEND − / + → temporary tempo bend</text>
+<text x="62" y="504" class="body">SHIFT SYNC → KeySync</text>
+<text x="62" y="532" class="body">5C / 5D → discrete key down / up</text>
+<text x="62" y="560" class="body">Headphone CUE → PFL</text>
+<rect x="605" y="327" width="555" height="295" rx="16" fill="#273851"/>
+<text x="627" y="361" class="head">RIGHT BANK  B / D  →  DECK 2 / 4</text>
+<text x="627" y="392" class="body">PLAY · native CUE · SYNC · Master Tempo</text>
+<text x="627" y="420" class="body">LOOP 4 · half/double · in/out · reloop</text>
+<text x="627" y="448" class="body">CUE BACK / FWD → −4 / +4 beats</text>
+<text x="627" y="476" class="body">BEND − / + → temporary tempo bend</text>
+<text x="627" y="504" class="body">SHIFT SYNC → KeySync</text>
+<text x="627" y="532" class="body">5C / 5D → discrete key down / up</text>
+<text x="627" y="560" class="body">Headphone CUE → PFL</text>
+<rect x="40" y="642" width="545" height="145" rx="16" fill="#174b4e"/>
+<text x="62" y="676" class="head">MIXER / ALL FOUR DECKS</text>
+<text x="62" y="707" class="body">Fader → volume · HI / MID / LOW → EQ</text>
+<text x="62" y="735" class="body">PAN → gain · FILTER → Color FX depth</text>
+<text x="62" y="763" class="body">FX 1 / 2 buttons → deck routing</text>
+<rect x="605" y="642" width="555" height="145" rx="16" fill="#654421"/>
+<text x="627" y="676" class="head">DEFERRED / MIDI LEARN REQUIRED</text>
+<text x="627" y="707" class="body">TEMPO 14-bit → native encoding to confirm</text>
+<text x="627" y="735" class="body">Continuous KEY · direct hotcues · preview</text>
+<text x="627" y="763" class="body">Master / headphone knobs · custom fader mode</text>
+<text x="40" y="825" class="small">CORE CSV: no explicit outputs  |  OPTIONAL LED CSV: 16 provisional outputs</text>
+<text x="40" y="856" class="small">Requires MIDI LEARN entitlement. Fixed native assignments do not execute Mixxx scripts.</text>
+<text x="40" y="887" class="small">Logical overview, not an exact reproduction of the hardware front panel. See README and DESIGN.</text>
+<rect x="40" y="920" width="1120" height="225" rx="16" fill="#1a263b"/>
+<text x="62" y="958" class="head">VALIDATION PATH</text>
+<text x="62" y="999" class="body">1. EXPORT a backup → IMPORT the Core CSV → EXPORT again for comparison</text>
+<text x="62" y="1037" class="body">2. Check A/B, then C/D → learn each TEMPO fader → confirm direction and center</text>
+<text x="62" y="1075" class="body">3. Check FX and SHIFT → test optional LED profile → keep rollback export</text>
+<text x="62" y="1115" class="small">No complete rekordbox import or hardware validation has been claimed.</text>
+</svg>

@@ -1,0 +1,63 @@
+@file,1,TR-1,,,,,,,,,,,,
+#name,function,type,input,deck1,deck2,deck3,deck4,output,deck1,deck2,deck3,deck4,option,comment
+PlayPause,PlayPause,Button,,9054,9154,9254,9354,,9054,9154,9254,9354,,PLAY / STOP
+Cue,Cue,Button,,9055,9155,9255,9355,,,,,,,SET CUE: native rekordbox Cue; no Mixxx cue script
+Sync,Sync,Button,,904F,914F,924F,934F,,,,,,,SYNC
+MasterTempo,MasterTempo,Button,,904B,914B,924B,934B,,904B,914B,924B,934B,,KEY button: master tempo
+HeadphoneCue,HeadphoneCue,Button,,9056,9156,9256,9356,,9056,9156,9256,9356,,Headphone CUE
+4BeatLoop,4BeatLoop,Button,,904C,914C,924C,934C,,904C,914C,924C,934C,,LOOP: 4-beat loop
+ReloopExit,ReloopExit,Button,,904A,914A,924A,934A,,,,,,,Reloop / exit
+LoopHalf,LoopHalf,Button,,9044,9144,9244,9344,,,,,,,Loop size half
+LoopDouble,LoopDouble,Button,,9045,9145,9245,9345,,,,,,,Loop size double
+LoopIn,LoopIn,Button,,9046,9146,9246,9346,,,,,,,Loop in
+LoopOut,LoopOut,Button,,9047,9147,9247,9347,,,,,,,Loop out
+4BeatJump<<,4BeatJump<<,Button,,9050,9150,9250,9350,,,,,,,CUE BACK: 4 beats backward
+4BeatJump>>,4BeatJump>>,Button,,9051,9151,9251,9351,,,,,,,CUE FWD: 4 beats forward
+PitchBendDown,PitchBendDown,Button,,9052,9152,9252,9352,,,,,,,BEND -: momentary native bend
+PitchBendUp,PitchBendUp,Button,,9053,9153,9253,9353,,,,,,,BEND +: momentary native bend
+Slip,Slip,Button,,9057,9157,9257,9357,,,,,,,SHIFT KEY address: slip
+KeySync,KeySync,Button,,905B,915B,925B,935B,,,,,,,SHIFT SYNC: key sync; no extra-deck fader mode
+Key-,Key-,Button,,905C,915C,925C,935C,,,,,,,Shifted address 5C: key down; differs from Mixxx
+Key+,Key+,Button,,905D,915D,925D,935D,,,,,,,Shifted address 5D: key up; differs from Mixxx
+Load,Load,Button,,9065,9166,9265,9366,,,,,,,Load selected track into hardware-selected deck bank
+ChannelFader,ChannelFader,KnobSlider,,B015,B115,B215,B315,,,,,,,Channel volume
+Gain,Gain,KnobSlider,,B00A,B10A,B20A,B30A,,,,,,,PAN knob used as gain
+EQHigh,EQHigh,KnobSlider,,B010,B110,B210,B310,,,,,,,HI
+EQMid,EQMid,KnobSlider,,B011,B111,B211,B311,,,,,,,MID
+EQLow,EQLow,KnobSlider,,B013,B113,B213,B313,,,,,,,LOW
+CFXParameterCH1,CFXParameterCH1,KnobSlider,B014,,,,,,,,,,,Deck 1 FILTER depth; select FILTER in rekordbox
+FX1Assign1,FX1Assign1,Button,904D,,,,,,,,,,,FX unit 1 deck routing
+FX2Assign1,FX2Assign1,Button,904E,,,,,,,,,,,FX unit 2 deck routing
+CFXParameterCH2,CFXParameterCH2,KnobSlider,B114,,,,,,,,,,,Deck 2 FILTER depth; select FILTER in rekordbox
+FX1Assign2,FX1Assign2,Button,914D,,,,,,,,,,,FX unit 1 deck routing
+FX2Assign2,FX2Assign2,Button,914E,,,,,,,,,,,FX unit 2 deck routing
+CFXParameterCH3,CFXParameterCH3,KnobSlider,B214,,,,,,,,,,,Deck 3 FILTER depth; select FILTER in rekordbox
+FX1Assign3,FX1Assign3,Button,924D,,,,,,,,,,,FX unit 1 deck routing
+FX2Assign3,FX2Assign3,Button,924E,,,,,,,,,,,FX unit 2 deck routing
+CFXParameterCH4,CFXParameterCH4,KnobSlider,B314,,,,,,,,,,,Deck 4 FILTER depth; select FILTER in rekordbox
+FX1Assign4,FX1Assign4,Button,934D,,,,,,,,,,,FX unit 1 deck routing
+FX2Assign4,FX2Assign4,Button,934E,,,,,,,,,,,FX unit 2 deck routing
+FX1-1,FX1-1,KnobSlider,B418,,,,,,,,,,,FX 1 knob 1: native slot depth
+FX1-1On,FX1-1On,Button,943C,,,,,,,,,,,FX 1 slot 1 on/off
+FX1-2,FX1-2,KnobSlider,B419,,,,,,,,,,,FX 1 knob 2: native slot depth
+FX1-2On,FX1-2On,Button,943D,,,,,,,,,,,FX 1 slot 2 on/off
+FX1-3,FX1-3,KnobSlider,B41A,,,,,,,,,,,FX 1 knob 3: native slot depth
+FX1-3On,FX1-3On,Button,943E,,,,,,,,,,,FX 1 slot 3 on/off
+FX1Beat,FX1Beat,KnobSlider,B41B,,,,,,,,,,,FX knob 4: beat value instead of Mixxx Dry/Wet
+FX1Tap,FX1Tap,Button,943F,,,,,,,,,,,FX button 4: tap tempo
+FX1-1Select.Up,FX1-1Select.Up,Button,9440,,,,,,,,,,,Previous effect in slot 1
+FX1-1Select.Down,FX1-1Select.Down,Button,9441,,,,,,,,,,,Next effect in slot 1
+FX1FXMode,FX1FXMode,Button,9442,,,,,,,,,,,Native unit FX mode
+FX2-1,FX2-1,KnobSlider,B618,,,,,,,,,,,FX 2 knob 1: native slot depth
+FX2-1On,FX2-1On,Button,963C,,,,,,,,,,,FX 2 slot 1 on/off
+FX2-2,FX2-2,KnobSlider,B619,,,,,,,,,,,FX 2 knob 2: native slot depth
+FX2-2On,FX2-2On,Button,963D,,,,,,,,,,,FX 2 slot 2 on/off
+FX2-3,FX2-3,KnobSlider,B61A,,,,,,,,,,,FX 2 knob 3: native slot depth
+FX2-3On,FX2-3On,Button,963E,,,,,,,,,,,FX 2 slot 3 on/off
+FX2Beat,FX2Beat,KnobSlider,B61B,,,,,,,,,,,FX knob 4: beat value instead of Mixxx Dry/Wet
+FX2Tap,FX2Tap,Button,963F,,,,,,,,,,,FX button 4: tap tempo
+FX2-1Select.Up,FX2-1Select.Up,Button,9640,,,,,,,,,,,Previous effect in slot 1
+FX2-1Select.Down,FX2-1Select.Down,Button,9641,,,,,,,,,,,Next effect in slot 1
+FX2FXMode,FX2FXMode,Button,9642,,,,,,,,,,,Native unit FX mode
+BrowseDown,BrowseDown,Button,9863,,,,,,,,,,,Browser next track
+BrowseUp,BrowseUp,Button,9864,,,,,,,,,,,Browser previous track
