@@ -1,0 +1,3448 @@
+<?xml version='1.0' encoding='utf-8'?>
+<MixxxControllerPreset mixxxVersion="2.5" schemaVersion="1">
+  <info>
+    <name>Vestax TR-1 - 2026 Custom</name>
+    <author>Danny Ricard-Lavergne</author>
+    <forums>http://www.mixxx.org/forums/viewtopic.php?f=7&amp;t=4021</forums>
+    <wiki>http://mixxx.org/wiki/doku.php/vestax_tr-1</wiki>
+    <description>Based on the supplied 2026 mapping by Danny Ricard-Lavergne, with lifecycle and 14-bit range fixes. Original FX, SHIFT, browser, cue, fader mode and LED assignments preserved. See README-DE.md.</description>
+  </info>
+  <controller id="TR-1">
+    <scriptfiles>
+      <file filename="Vestax-TR-1-scripts.js" functionprefix="VestaxTR1" />
+    </scriptfiles>
+    <controls>
+      <control>
+        <group>[Master]</group>
+        <key>gain</key>
+        <status>0xB8</status>
+        <midino>0x07</midino>
+        <options>
+          <soft-takeover />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>pregain</key>
+        <status>0xB0</status>
+        <midino>0x0A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>pregain</key>
+        <status>0xB1</status>
+        <midino>0x0A</midino>
+        <options>
+          <soft-takeover />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>pregain</key>
+        <status>0xB2</status>
+        <midino>0x0A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>pregain</key>
+        <status>0xB3</status>
+        <midino>0x0A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+        <key>parameter3</key>
+        <status>0xB0</status>
+        <midino>0x10</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+        <key>parameter3</key>
+        <status>0xB1</status>
+        <midino>0x10</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+        <key>parameter3</key>
+        <status>0xB2</status>
+        <midino>0x10</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+        <key>parameter3</key>
+        <status>0xB3</status>
+        <midino>0x10</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+        <key>parameter2</key>
+        <status>0xB0</status>
+        <midino>0x11</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+        <key>parameter2</key>
+        <status>0xB1</status>
+        <midino>0x11</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+        <key>parameter2</key>
+        <status>0xB2</status>
+        <midino>0x11</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+        <key>parameter2</key>
+        <status>0xB3</status>
+        <midino>0x11</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Sampler1]</group>
+        <key>pregain</key>
+        <description>MIDI Learned from 80 messages.</description>
+        <status>0xB0</status>
+        <midino>0x12</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Sampler3]</group>
+        <key>pregain</key>
+        <description>MIDI Learned from 81 messages.</description>
+        <status>0xB1</status>
+        <midino>0x12</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Sampler2]</group>
+        <key>pregain</key>
+        <description>MIDI Learned from 22 messages.</description>
+        <status>0xB2</status>
+        <midino>0x12</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Sampler4]</group>
+        <key>pregain</key>
+        <description>MIDI Learned from 31 messages.</description>
+        <status>0xB3</status>
+        <midino>0x12</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+        <key>parameter1</key>
+        <status>0xB0</status>
+        <midino>0x13</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+        <key>parameter1</key>
+        <status>0xB1</status>
+        <midino>0x13</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+        <key>parameter1</key>
+        <status>0xB2</status>
+        <midino>0x13</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+        <key>parameter1</key>
+        <status>0xB3</status>
+        <midino>0x13</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[QuickEffectRack1_[Channel1]]</group>
+        <key>super1</key>
+        <status>0xB0</status>
+        <midino>0x14</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[QuickEffectRack1_[Channel2]]</group>
+        <key>super1</key>
+        <status>0xB1</status>
+        <midino>0x14</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[QuickEffectRack1_[Channel3]]</group>
+        <key>super1</key>
+        <status>0xB2</status>
+        <midino>0x14</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[QuickEffectRack1_[Channel4]]</group>
+        <key>super1</key>
+        <status>0xB3</status>
+        <midino>0x14</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>volume</key>
+        <status>0xB0</status>
+        <midino>0x15</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>volume</key>
+        <status>0xB1</status>
+        <midino>0x15</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>volume</key>
+        <status>0xB2</status>
+        <midino>0x15</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>volume</key>
+        <status>0xB3</status>
+        <midino>0x15</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect1]</group>
+        <key>meta</key>
+        <status>0xB4</status>
+        <midino>0x18</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect1]</group>
+        <key>meta</key>
+        <status>0xB6</status>
+        <midino>0x18</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect2]</group>
+        <key>meta</key>
+        <status>0xB4</status>
+        <midino>0x19</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect2]</group>
+        <key>meta</key>
+        <status>0xB6</status>
+        <midino>0x19</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect3]</group>
+        <key>meta</key>
+        <status>0xB4</status>
+        <midino>0x1A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect3]</group>
+        <key>meta</key>
+        <status>0xB6</status>
+        <midino>0x1A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>mix</key>
+        <status>0xB4</status>
+        <midino>0x1B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>mix</key>
+        <status>0xB6</status>
+        <midino>0x1B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>headMix</key>
+        <status>0xB8</status>
+        <midino>0x1C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>headGain</key>
+        <status>0xB8</status>
+        <midino>0x1D</midino>
+        <options>
+          <soft-takeover />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect1]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect1]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect2]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect2]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect3]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect3]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>mix_mode</key>
+        <status>0x94</status>
+        <midino>0x3F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>mix_mode</key>
+        <status>0x96</status>
+        <midino>0x3F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Prev</key>
+        <status>0x94</status>
+        <midino>0x40</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Prev</key>
+        <status>0x96</status>
+        <midino>0x40</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Next</key>
+        <status>0x94</status>
+        <midino>0x41</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Next</key>
+        <status>0x96</status>
+        <midino>0x41</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Mode</key>
+        <status>0x94</status>
+        <midino>0x42</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Mode</key>
+        <status>0x96</status>
+        <midino>0x42</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_halve</key>
+        <status>0x90</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_halve</key>
+        <status>0x91</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_halve</key>
+        <status>0x92</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_halve</key>
+        <status>0x93</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_double</key>
+        <status>0x90</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_double</key>
+        <status>0x91</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_double</key>
+        <status>0x92</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_double</key>
+        <status>0x93</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_in</key>
+        <status>0x90</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_in</key>
+        <status>0x91</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_in</key>
+        <status>0x92</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_in</key>
+        <status>0x93</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_out</key>
+        <status>0x90</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_out</key>
+        <status>0x91</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_out</key>
+        <status>0x92</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_out</key>
+        <status>0x93</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x90</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x91</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x92</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x93</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x90</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x91</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x92</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x93</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>reloop_toggle</key>
+        <status>0x90</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>reloop_toggle</key>
+        <status>0x91</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>reloop_toggle</key>
+        <status>0x92</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>reloop_toggle</key>
+        <status>0x93</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>keylock</key>
+        <status>0x90</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>keylock</key>
+        <status>0x91</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>keylock</key>
+        <status>0x92</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>keylock</key>
+        <status>0x93</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatloop_activate</key>
+        <status>0x90</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatloop_activate</key>
+        <status>0x91</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatloop_activate</key>
+        <status>0x92</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatloop_activate</key>
+        <status>0x93</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x90</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x91</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x92</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x93</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x90</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x91</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x92</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x93</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>sync_enabled</key>
+        <status>0x90</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>sync_enabled</key>
+        <status>0x91</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>sync_enabled</key>
+        <status>0x92</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>sync_enabled</key>
+        <status>0x93</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_backward</key>
+        <status>0x90</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_backward</key>
+        <status>0x91</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_backward</key>
+        <status>0x92</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_backward</key>
+        <status>0x93</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_forward</key>
+        <status>0x90</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_forward</key>
+        <status>0x91</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_forward</key>
+        <status>0x92</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_forward</key>
+        <status>0x93</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x90</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x91</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x92</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x93</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x90</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x91</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x92</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x93</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x90</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x91</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x92</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x93</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x90</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x91</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x92</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x93</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>pfl</key>
+        <status>0x90</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>pfl</key>
+        <status>0x91</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>pfl</key>
+        <status>0x92</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>pfl</key>
+        <status>0x93</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x90</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x91</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x92</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x93</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x90</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x91</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x92</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x93</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x90</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x91</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x92</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x93</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>slip_enabled</key>
+        <status>0x90</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>slip_enabled</key>
+        <status>0x91</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>slip_enabled</key>
+        <status>0x92</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>slip_enabled</key>
+        <status>0x93</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x90</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x91</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x92</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x93</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_size_double</key>
+        <status>0x90</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_size_double</key>
+        <status>0x91</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_size_double</key>
+        <status>0x92</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_size_double</key>
+        <status>0x93</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x90</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x91</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x92</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x93</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x90</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x91</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x92</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x93</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x90</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x91</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x92</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x93</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x90</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x91</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x92</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x93</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x90</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x91</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x92</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x93</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[PreviewDeck1]</group>
+        <key>LoadSelectedTrackAndPlay</key>
+        <status>0x98</status>
+        <midino>0x62</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Playlist]</group>
+        <key>SelectNextTrack</key>
+        <status>0x98</status>
+        <midino>0x63</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Playlist]</group>
+        <key>SelectPrevTrack</key>
+        <status>0x98</status>
+        <midino>0x64</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x90</status>
+        <midino>0x65</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x92</status>
+        <midino>0x65</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x91</status>
+        <midino>0x66</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x93</status>
+        <midino>0x66</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.selectDown</key>
+        <status>0x98</status>
+        <midino>0x68</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.selectUp</key>
+        <status>0x98</status>
+        <midino>0x69</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>pitch_adjust</key>
+        <status>0xE0</status>
+        <options>
+          <invert />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>pitch_adjust</key>
+        <status>0xE1</status>
+        <options>
+          <invert />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>pitch_adjust</key>
+        <status>0xE2</status>
+        <options>
+          <invert />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>pitch_adjust</key>
+        <status>0xE3</status>
+        <options>
+          <invert />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.rate</key>
+        <status>0xE9</status>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.rate</key>
+        <status>0xEA</status>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.rate</key>
+        <status>0xEB</status>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.rate</key>
+        <status>0xEC</status>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect1]</group>
+        <key>enabled</key>
+        <status>0x84</status>
+        <midino>0x3C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect1]</group>
+        <key>enabled</key>
+        <status>0x86</status>
+        <midino>0x3C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect2]</group>
+        <key>enabled</key>
+        <status>0x84</status>
+        <midino>0x3D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect2]</group>
+        <key>enabled</key>
+        <status>0x86</status>
+        <midino>0x3D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1_Effect3]</group>
+        <key>enabled</key>
+        <status>0x84</status>
+        <midino>0x3E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2_Effect3]</group>
+        <key>enabled</key>
+        <status>0x86</status>
+        <midino>0x3E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>mix_mode</key>
+        <status>0x84</status>
+        <midino>0x3F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>mix_mode</key>
+        <status>0x86</status>
+        <midino>0x3F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Prev</key>
+        <status>0x84</status>
+        <midino>0x40</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Prev</key>
+        <status>0x86</status>
+        <midino>0x40</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Next</key>
+        <status>0x84</status>
+        <midino>0x41</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Next</key>
+        <status>0x86</status>
+        <midino>0x41</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx1Mode</key>
+        <status>0x84</status>
+        <midino>0x42</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.fx2Mode</key>
+        <status>0x86</status>
+        <midino>0x42</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_halve</key>
+        <status>0x80</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_halve</key>
+        <status>0x81</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_halve</key>
+        <status>0x82</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_halve</key>
+        <status>0x83</status>
+        <midino>0x44</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_double</key>
+        <status>0x80</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_double</key>
+        <status>0x81</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_double</key>
+        <status>0x82</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_double</key>
+        <status>0x83</status>
+        <midino>0x45</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_in</key>
+        <status>0x80</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_in</key>
+        <status>0x81</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_in</key>
+        <status>0x82</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_in</key>
+        <status>0x83</status>
+        <midino>0x46</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>loop_out</key>
+        <status>0x80</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>loop_out</key>
+        <status>0x81</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>loop_out</key>
+        <status>0x82</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>loop_out</key>
+        <status>0x83</status>
+        <midino>0x47</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x80</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x81</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x82</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_3_activate</key>
+        <status>0x83</status>
+        <midino>0x48</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x80</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x81</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x82</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_4_activate</key>
+        <status>0x83</status>
+        <midino>0x49</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>reloop_toggle</key>
+        <status>0x80</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>reloop_toggle</key>
+        <status>0x81</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>reloop_toggle</key>
+        <status>0x82</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>reloop_toggle</key>
+        <status>0x83</status>
+        <midino>0x4A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>keylock</key>
+        <status>0x80</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>keylock</key>
+        <status>0x81</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>keylock</key>
+        <status>0x82</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>keylock</key>
+        <status>0x83</status>
+        <midino>0x4B</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatloop_activate</key>
+        <status>0x80</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatloop_activate</key>
+        <status>0x81</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatloop_activate</key>
+        <status>0x82</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatloop_activate</key>
+        <status>0x83</status>
+        <midino>0x4C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x80</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x81</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x82</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x83</status>
+        <midino>0x4D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x80</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x81</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x82</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x83</status>
+        <midino>0x4E</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>sync_enabled</key>
+        <status>0x80</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>sync_enabled</key>
+        <status>0x81</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>sync_enabled</key>
+        <status>0x82</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>sync_enabled</key>
+        <status>0x83</status>
+        <midino>0x4F</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_backward</key>
+        <status>0x80</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_backward</key>
+        <status>0x81</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_backward</key>
+        <status>0x82</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_backward</key>
+        <status>0x83</status>
+        <midino>0x50</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_forward</key>
+        <status>0x80</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_forward</key>
+        <status>0x81</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_forward</key>
+        <status>0x82</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_forward</key>
+        <status>0x83</status>
+        <midino>0x51</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x80</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x81</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x82</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x83</status>
+        <midino>0x52</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x80</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x81</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x82</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.bend</key>
+        <status>0x83</status>
+        <midino>0x53</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x80</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x81</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x82</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.play</key>
+        <status>0x83</status>
+        <midino>0x54</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x80</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x81</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x82</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.cue</key>
+        <status>0x83</status>
+        <midino>0x55</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>pfl</key>
+        <status>0x80</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>pfl</key>
+        <status>0x81</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>pfl</key>
+        <status>0x82</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>pfl</key>
+        <status>0x83</status>
+        <midino>0x56</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x80</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x81</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x82</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatlooproll_activate</key>
+        <status>0x83</status>
+        <midino>0x58</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x80</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x81</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x82</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_1_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x83</status>
+        <midino>0x59</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x80</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x81</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x82</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>hotcue_2_activate</key>
+        <description>MIDI Learned from 2 messages.</description>
+        <status>0x83</status>
+        <midino>0x5A</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>slip_enabled</key>
+        <status>0x80</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>slip_enabled</key>
+        <status>0x81</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>slip_enabled</key>
+        <status>0x82</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>slip_enabled</key>
+        <status>0x83</status>
+        <midino>0x57</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x80</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x81</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x82</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_size_halve</key>
+        <status>0x83</status>
+        <midino>0x5C</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beatjump_size_double</key>
+        <status>0x80</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beatjump_size_double</key>
+        <status>0x81</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beatjump_size_double</key>
+        <status>0x82</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beatjump_size_double</key>
+        <status>0x83</status>
+        <midino>0x5D</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x80</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x81</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x82</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendMinus</key>
+        <status>0x83</status>
+        <midino>0x5E</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x80</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x81</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x82</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendPlus</key>
+        <status>0x83</status>
+        <midino>0x5B</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x80</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x81</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x82</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.shiftBendPlusFine</key>
+        <status>0x83</status>
+        <midino>0x5F</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x80</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x81</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x82</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>cue_gotoandstop</key>
+        <status>0x83</status>
+        <midino>0x60</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x80</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x81</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x82</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>beats_translate_curpos</key>
+        <status>0x83</status>
+        <midino>0x61</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[PreviewDeck1]</group>
+        <key>LoadSelectedTrackAndPlay</key>
+        <status>0x88</status>
+        <midino>0x62</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Playlist]</group>
+        <key>SelectNextTrack</key>
+        <status>0x88</status>
+        <midino>0x63</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Playlist]</group>
+        <key>SelectPrevTrack</key>
+        <status>0x88</status>
+        <midino>0x64</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel1]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x80</status>
+        <midino>0x65</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel3]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x82</status>
+        <midino>0x65</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel2]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x81</status>
+        <midino>0x66</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Channel4]</group>
+        <key>LoadSelectedTrack</key>
+        <status>0x83</status>
+        <midino>0x66</midino>
+        <options>
+          <normal />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.selectDown</key>
+        <status>0x88</status>
+        <midino>0x68</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+      <control>
+        <group>[Master]</group>
+        <key>VestaxTR1.selectUp</key>
+        <status>0x88</status>
+        <midino>0x69</midino>
+        <options>
+          <script-binding />
+        </options>
+      </control>
+    </controls>
+    <outputs>
+      <output>
+        <group>[Channel1]</group>
+        <key>hotcue_1_status</key>
+        <status>0x90</status>
+        <midino>0x59</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>hotcue_2_status</key>
+        <status>0x90</status>
+        <midino>0x5A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>keylock</key>
+        <status>0x90</status>
+        <midino>0x4B</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>sync_enabled</key>
+        <status>0x90</status>
+        <midino>0x4F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>loop_enabled</key>
+        <status>0x90</status>
+        <midino>0x4A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>loop_enabled</key>
+        <status>0x91</status>
+        <midino>0x4A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>loop_enabled</key>
+        <status>0x92</status>
+        <midino>0x4A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>loop_enabled</key>
+        <status>0x93</status>
+        <midino>0x4A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>cue_indicator</key>
+        <status>0x90</status>
+        <midino>0x55</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>cue_indicator</key>
+        <status>0x91</status>
+        <midino>0x55</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>cue_indicator</key>
+        <status>0x92</status>
+        <midino>0x55</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>cue_indicator</key>
+        <status>0x93</status>
+        <midino>0x55</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>sync_enabled</key>
+        <status>0x91</status>
+        <midino>0x4F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>sync_enabled</key>
+        <status>0x92</status>
+        <midino>0x4F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>sync_enabled</key>
+        <status>0x93</status>
+        <midino>0x4F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>loop_enabled</key>
+        <status>0x90</status>
+        <midino>0x4C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>pfl</key>
+        <status>0x90</status>
+        <midino>0x56</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>play</key>
+        <status>0x90</status>
+        <midino>0x54</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>slip_enabled</key>
+        <status>0x90</status>
+        <midino>0x57</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel1]</group>
+        <key>track_loaded</key>
+        <status>0x90</status>
+        <midino>0x61</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>hotcue_1_status</key>
+        <status>0x91</status>
+        <midino>0x59</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>hotcue_2_status</key>
+        <status>0x91</status>
+        <midino>0x5A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>keylock</key>
+        <status>0x91</status>
+        <midino>0x4B</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>loop_enabled</key>
+        <status>0x91</status>
+        <midino>0x4C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>pfl</key>
+        <status>0x91</status>
+        <midino>0x56</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>play</key>
+        <status>0x91</status>
+        <midino>0x54</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>slip_enabled</key>
+        <status>0x91</status>
+        <midino>0x57</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel2]</group>
+        <key>track_loaded</key>
+        <status>0x91</status>
+        <midino>0x61</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>hotcue_1_status</key>
+        <status>0x92</status>
+        <midino>0x59</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>hotcue_2_status</key>
+        <status>0x92</status>
+        <midino>0x5A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>keylock</key>
+        <status>0x92</status>
+        <midino>0x4B</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>loop_enabled</key>
+        <status>0x92</status>
+        <midino>0x4C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>pfl</key>
+        <status>0x92</status>
+        <midino>0x56</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>play</key>
+        <status>0x92</status>
+        <midino>0x54</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>slip_enabled</key>
+        <status>0x92</status>
+        <midino>0x57</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel3]</group>
+        <key>track_loaded</key>
+        <status>0x92</status>
+        <midino>0x61</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>hotcue_1_status</key>
+        <status>0x93</status>
+        <midino>0x59</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>hotcue_2_status</key>
+        <status>0x93</status>
+        <midino>0x5A</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>keylock</key>
+        <status>0x93</status>
+        <midino>0x4B</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>loop_enabled</key>
+        <status>0x93</status>
+        <midino>0x4C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>pfl</key>
+        <status>0x93</status>
+        <midino>0x56</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>play</key>
+        <status>0x93</status>
+        <midino>0x54</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>slip_enabled</key>
+        <status>0x93</status>
+        <midino>0x57</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[Channel4]</group>
+        <key>track_loaded</key>
+        <status>0x93</status>
+        <midino>0x61</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x90</status>
+        <midino>0x4D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x91</status>
+        <midino>0x4D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x92</status>
+        <midino>0x4D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x93</status>
+        <midino>0x4D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1]</group>
+        <key>mix_mode</key>
+        <status>0x94</status>
+        <midino>0x3F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1_Effect1]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1_Effect2]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit1_Effect3]</group>
+        <key>enabled</key>
+        <status>0x94</status>
+        <midino>0x3E</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel1]_enable</key>
+        <status>0x90</status>
+        <midino>0x4E</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel2]_enable</key>
+        <status>0x91</status>
+        <midino>0x4E</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel3]_enable</key>
+        <status>0x92</status>
+        <midino>0x4E</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>group_[Channel4]_enable</key>
+        <status>0x93</status>
+        <midino>0x4E</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2]</group>
+        <key>mix_mode</key>
+        <status>0x96</status>
+        <midino>0x3F</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2_Effect1]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3C</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2_Effect2]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3D</midino>
+        <minimum>0.5</minimum>
+      </output>
+      <output>
+        <group>[EffectRack1_EffectUnit2_Effect3]</group>
+        <key>enabled</key>
+        <status>0x96</status>
+        <midino>0x3E</midino>
+        <minimum>0.5</minimum>
+      </output>
+    </outputs>
+  </controller>
+</MixxxControllerPreset>
