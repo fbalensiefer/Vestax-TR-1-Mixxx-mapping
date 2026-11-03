@@ -4,6 +4,10 @@ Vier-Deck-Mapping für den **Vestax TR-1** und **Mixxx 2.5**, auf Grundlage der 
 
 [English](README.md) · [Ausführliches Setup (Englisch)](docs/SETUP.md) · [Belegung](docs/CONTROLS.md)
 
+## Erweiterung für rekordbox
+
+Das Projekt enthält jetzt zusätzlich ein [rekordbox-7-Mapping-Design mit deutscher Anleitung](rekordbox/README.de.md), zwei CSV-Entwürfen und einer Belegungsübersicht. Import und Hardwaretest sind noch offen; TEMPO und kontinuierlicher KEY-Regler müssen noch in rekordbox gelernt werden.
+
 ## Installation
 
 1. Auf GitHub **Code → Download ZIP** wählen und das Archiv entpacken.

@@ -4,6 +4,10 @@ A four-deck MIDI mapping for the **Vestax TR-1**, targeting **Mixxx 2.5**. Based
 
 **[Deutsche Anleitung](README.de.md)** · **[Setup](docs/SETUP.md)** · **[Controls](docs/CONTROLS.md)** · **[MIDI reference](docs/MIDI-REFERENCE.md)**
 
+## rekordbox alternative
+
+A separate [rekordbox 7 mapping design](rekordbox/README.md) now includes two native CSV drafts, an annotated layout and setup instructions. Import/hardware validation is pending; tempo and continuous KEY still require a MIDI LEARN round-trip. The Mixxx files below remain the installable Mixxx mapping.
+
 ## Install in five steps
 
 1. Download this repository using **Code → Download ZIP** and extract it.

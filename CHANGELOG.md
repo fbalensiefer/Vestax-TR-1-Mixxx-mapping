@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-03 — rekordbox 7 mapping design
+
+- Add separate native CSV drafts: core input profile and optional 16-output LED profile.
+- Define 61 function rows / 136 unique input addresses across four decks, mixer, loops, FX and browser.
+- Include English/German setup guides, schematic layout, porting decisions and validation gates.
+- Validate function/type identifiers against local rekordbox 7.2.19 factory definitions without redistributing vendor files.
+- Defer unresolved Pitch Bend encoding for TEMPO and continuous KEY, direct hotcues, preview and audio-level knobs. No importer/hardware validation is claimed.
+- Extend CI with deterministic CSV/address checks. Existing Mixxx mappings remain unchanged.
+
 ## 2026-11-03 — Initial standalone custom mapping
 
 Based on the supplied 2026 XML/script pair, preserving all 190 original input assignments and 60 XML LED outputs.
