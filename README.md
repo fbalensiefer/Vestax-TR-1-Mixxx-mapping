@@ -14,7 +14,7 @@ A four-deck MIDI mapping for the **Vestax TR-1**, targeting **Mixxx 2.5**. Based
 4. Connect the TR-1, restart Mixxx, and open **Preferences → Controllers → TR-1**.
 5. Select **Vestax TR-1 - 2026 Custom**, enable the controller and click **Apply**. Select a four-deck skin to use C/D.
 
-Copy the files from the repository root; `source-2026/` contains the unmodified reference version. Keep the XML and script filenames unchanged. No Python or Node.js installation is needed to use the mapping.
+Copy the files from the repository root. The unmodified source files are not distributed; their provenance is recorded in [SOURCE.md](SOURCE.md). Keep the XML and script filenames unchanged. No Python or Node.js installation is needed to use the mapping.
 
 ## Features
 
@@ -27,7 +27,7 @@ Copy the files from the repository root; `source-2026/` contains the unmodified 
 
 ## Status
 
-The basic MIDI addresses were checked against a physical TR-1 on macOS. The software tests check all 16,384 tempo-fader values on each deck, extra-deck volume routing, release handling, cue/PLAY latching and timer cleanup. XML tests check that every original input assignment and LED output is retained.
+The basic MIDI addresses were checked against a physical TR-1 on macOS. The software tests check all 16,384 tempo-fader values on each deck, extra-deck volume routing, release handling, cue/PLAY latching and timer cleanup. XML tests check routing consistency, the recorded basic-control addresses and matching Note Off releases.
 
 **This is not a claim of complete hardware validation.** FX, SHIFT and LED behavior still need an end-to-end check in Mixxx. Windows and Linux installation steps are documented, but were not tested on those systems. See [known limitations and troubleshooting](docs/SETUP.md#troubleshooting).
 

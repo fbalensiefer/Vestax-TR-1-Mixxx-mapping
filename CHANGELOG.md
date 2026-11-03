@@ -11,5 +11,6 @@ Based on the supplied 2026 XML/script pair, preserving all 190 original input as
 - Disconnect FX-mode engine connections when unloading.
 - Initialize all four deck LED banks.
 - Add English/German setup documentation, controls, generated MIDI reference, provenance notes and automated tests.
+- Keep the unmodified source files out of the public repository; record their provenance and SHA-256 digests separately.
 
 FX, SHIFT, browser, custom cue behavior, fader mode and LED addresses come from the supplied mapping. Their complete end-to-end hardware behavior has not been validated by these changes.

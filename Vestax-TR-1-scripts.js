@@ -1,4 +1,4 @@
-// Local adaptation of the user-supplied 2026 mapping. See source-2026/ for original.
+// Local adaptation of the user-supplied 2026 mapping. See SOURCE.md for original-source provenance.
 // Vestax TR-1 — Mixxx script
 // Move Control A/B/C/D + FX Advanced/Chained LEDs
 //

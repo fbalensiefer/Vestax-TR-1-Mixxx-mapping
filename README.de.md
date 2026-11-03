@@ -15,7 +15,7 @@ Vier-Deck-Mapping für den **Vestax TR-1** und **Mixxx 2.5**, auf Grundlage der 
 5. Unter **Einstellungen → Controller → TR-1** das Preset **Vestax TR-1 - 2026 Custom** auswählen, den Controller aktivieren und **Anwenden** klicken.
 6. Für Deck C/D eine Oberfläche mit vier Decks auswählen. Unter **Sound-Hardware** die eigene Audioausgabe und gegebenenfalls einen separaten Kopfhörerausgang konfigurieren.
 
-Nicht die Dateien aus `source-2026/` installieren: Das ist die unveränderte Ausgangsversion. XML und JavaScript müssen zusammenliegen und ihre Dateinamen behalten. Für die Nutzung sind weder Node.js noch Python erforderlich.
+Die unveränderten Ausgangsdateien werden nicht veröffentlicht; ihre Herkunft ist in [SOURCE.md](SOURCE.md) dokumentiert. XML und JavaScript müssen zusammenliegen und ihre Dateinamen behalten. Für die Nutzung sind weder Node.js noch Python erforderlich.
 
 ## Wichtigste Belegungen
 
@@ -50,4 +50,4 @@ SET CUE aktiviert Quantize. Bei Pause am vorhandenen Cue-Punkt startet gedrückt
 
 Die Grundadressen wurden an einem TR-1 auf macOS erfasst. Automatische Tests prüfen unter anderem die hochauflösenden Tempo-Fader, Releases, Cue/PLAY und Timer-Abbruch. Die vollständige FX-, SHIFT- und LED-Funktion in Mixxx sowie Windows/Linux sind noch nicht praktisch bestätigt.
 
-Die Vorlage nennt Danny Ricard-Lavergne als Autor. Die Originaldateien bleiben in `source-2026/` erhalten. [Änderungen](CHANGELOG.md) und [Herkunft/Lizenzstatus](NOTICE.md) sind dokumentiert; es wird keine neue Lizenz für fremde Bestandteile vergeben.
+Die Vorlage nennt Danny Ricard-Lavergne als Autor. Die Originaldateien werden nicht mitveröffentlicht. [Änderungen](CHANGELOG.md) und [Herkunft/Lizenzstatus](NOTICE.md) sind dokumentiert; es wird keine neue Lizenz für fremde Bestandteile vergeben.
