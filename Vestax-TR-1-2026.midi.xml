@@ -5,7 +5,7 @@
     <author>Danny Ricard-Lavergne</author>
     <forums>http://www.mixxx.org/forums/viewtopic.php?f=7&amp;t=4021</forums>
     <wiki>http://mixxx.org/wiki/doku.php/vestax_tr-1</wiki>
-    <description>Based on the supplied 2026 mapping by Danny Ricard-Lavergne, with lifecycle and 14-bit range fixes. Original FX, SHIFT, browser, cue, fader mode and LED assignments preserved. See README-DE.md.</description>
+    <description>Four-deck TR-1 mapping with two FX modes, MOVE CH, deck-safe button releases and fader pickup.</description>
   </info>
   <controller id="TR-1">
     <scriptfiles>
@@ -243,92 +243,92 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>volume</key>
+        <key>VestaxTR1.volume</key>
         <status>0xB0</status>
         <midino>0x15</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>volume</key>
+        <key>VestaxTR1.volume</key>
         <status>0xB1</status>
         <midino>0x15</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>volume</key>
+        <key>VestaxTR1.volume</key>
         <status>0xB2</status>
         <midino>0x15</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>volume</key>
+        <key>VestaxTR1.volume</key>
         <status>0xB3</status>
         <midino>0x15</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect1]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB4</status>
         <midino>0x18</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect1]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB6</status>
         <midino>0x18</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect2]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB4</status>
         <midino>0x19</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect2]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB6</status>
         <midino>0x19</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect3]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB4</status>
         <midino>0x1A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect3]</group>
-        <key>meta</key>
+        <key>VestaxTR1.fxKnob</key>
         <status>0xB6</status>
         <midino>0x1A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -337,7 +337,7 @@
         <status>0xB4</status>
         <midino>0x1B</midino>
         <options>
-          <normal />
+          <soft-takeover />
         </options>
       </control>
       <control>
@@ -346,7 +346,7 @@
         <status>0xB6</status>
         <midino>0x1B</midino>
         <options>
-          <normal />
+          <soft-takeover />
         </options>
       </control>
       <control>
@@ -369,79 +369,79 @@
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect1]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x3C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect1]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x3C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect2]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x3D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect2]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x3D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect3]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x3E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect3]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x3E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1]</group>
-        <key>mix_mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x3F</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2]</group>
-        <key>mix_mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x3F</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Prev</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x40</midino>
         <options>
@@ -450,7 +450,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Prev</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x40</midino>
         <options>
@@ -459,7 +459,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Next</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x41</midino>
         <options>
@@ -468,7 +468,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Next</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x41</midino>
         <options>
@@ -477,7 +477,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x94</status>
         <midino>0x42</midino>
         <options>
@@ -486,7 +486,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x96</status>
         <midino>0x42</midino>
         <options>
@@ -495,254 +495,254 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x90</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x91</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x92</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x93</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -783,110 +783,110 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel1]_enable</key>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel2]_enable</key>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel3]_enable</key>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel4]_enable</key>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel1]_enable</key>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel2]_enable</key>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel3]_enable</key>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel4]_enable</key>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -999,7 +999,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x52</midino>
         <options>
@@ -1008,7 +1008,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x52</midino>
         <options>
@@ -1017,7 +1017,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x52</midino>
         <options>
@@ -1026,7 +1026,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x52</midino>
         <options>
@@ -1035,7 +1035,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x53</midino>
         <options>
@@ -1044,7 +1044,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x53</midino>
         <options>
@@ -1053,7 +1053,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x53</midino>
         <options>
@@ -1062,7 +1062,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x53</midino>
         <options>
@@ -1107,7 +1107,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x55</midino>
         <options>
@@ -1116,7 +1116,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x55</midino>
         <options>
@@ -1125,7 +1125,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x55</midino>
         <options>
@@ -1134,7 +1134,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x55</midino>
         <options>
@@ -1179,118 +1179,118 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x90</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x91</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x92</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x93</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x90</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x91</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x92</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x93</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -1403,7 +1403,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x5E</midino>
         <options>
@@ -1412,7 +1412,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x5E</midino>
         <options>
@@ -1421,7 +1421,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x5E</midino>
         <options>
@@ -1430,7 +1430,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x5E</midino>
         <options>
@@ -1475,7 +1475,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x5F</midino>
         <options>
@@ -1484,7 +1484,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x5F</midino>
         <options>
@@ -1493,7 +1493,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x5F</midino>
         <options>
@@ -1502,7 +1502,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x5F</midino>
         <options>
@@ -1547,38 +1547,38 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x90</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x91</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x92</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x93</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -1728,79 +1728,79 @@
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect1]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x3C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect1]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x3C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect2]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x3D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect2]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x3D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1_Effect3]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x3E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2_Effect3]</group>
-        <key>enabled</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x3E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit1]</group>
-        <key>mix_mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x3F</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[EffectRack1_EffectUnit2]</group>
-        <key>mix_mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x3F</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Prev</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x40</midino>
         <options>
@@ -1809,7 +1809,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Prev</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x40</midino>
         <options>
@@ -1818,7 +1818,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Next</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x41</midino>
         <options>
@@ -1827,7 +1827,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Next</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x41</midino>
         <options>
@@ -1836,7 +1836,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx1Mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x84</status>
         <midino>0x42</midino>
         <options>
@@ -1845,7 +1845,7 @@
       </control>
       <control>
         <group>[Master]</group>
-        <key>VestaxTR1.fx2Mode</key>
+        <key>VestaxTR1.fxButton</key>
         <status>0x86</status>
         <midino>0x42</midino>
         <options>
@@ -1854,254 +1854,254 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_halve</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x44</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_double</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x45</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_in</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x46</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>loop_out</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x47</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_3_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x48</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_4_activate</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x49</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x80</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x81</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x82</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>reloop_toggle</key>
+        <key>VestaxTR1.moveControl</key>
         <status>0x83</status>
         <midino>0x4A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -2142,110 +2142,110 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beatloop_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x4C</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel1]_enable</key>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel2]_enable</key>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel3]_enable</key>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>group_[Channel4]_enable</key>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x4D</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel1]_enable</key>
+        <group>[Channel1]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel2]_enable</key>
+        <group>[Channel2]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel3]_enable</key>
+        <group>[Channel3]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>group_[Channel4]_enable</key>
+        <group>[Channel4]</group>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x4E</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -2358,7 +2358,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x52</midino>
         <options>
@@ -2367,7 +2367,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x52</midino>
         <options>
@@ -2376,7 +2376,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x52</midino>
         <options>
@@ -2385,7 +2385,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x52</midino>
         <options>
@@ -2394,7 +2394,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x53</midino>
         <options>
@@ -2403,7 +2403,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x53</midino>
         <options>
@@ -2412,7 +2412,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x53</midino>
         <options>
@@ -2421,7 +2421,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.bend</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x53</midino>
         <options>
@@ -2466,7 +2466,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x55</midino>
         <options>
@@ -2475,7 +2475,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x55</midino>
         <options>
@@ -2484,7 +2484,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x55</midino>
         <options>
@@ -2493,7 +2493,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.cue</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x55</midino>
         <options>
@@ -2538,118 +2538,118 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beatlooproll_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x58</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x80</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x81</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x82</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_1_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x83</status>
         <midino>0x59</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x80</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x81</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x82</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>hotcue_2_activate</key>
+        <key>VestaxTR1.deckButton</key>
         <description>MIDI Learned from 2 messages.</description>
         <status>0x83</status>
         <midino>0x5A</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -2762,7 +2762,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x5E</midino>
         <options>
@@ -2771,7 +2771,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x5E</midino>
         <options>
@@ -2780,7 +2780,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x5E</midino>
         <options>
@@ -2789,7 +2789,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.shiftBendMinus</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x5E</midino>
         <options>
@@ -2834,7 +2834,7 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x5F</midino>
         <options>
@@ -2843,7 +2843,7 @@
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x5F</midino>
         <options>
@@ -2852,7 +2852,7 @@
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x5F</midino>
         <options>
@@ -2861,7 +2861,7 @@
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>VestaxTR1.shiftBendPlusFine</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x5F</midino>
         <options>
@@ -2906,38 +2906,38 @@
       </control>
       <control>
         <group>[Channel1]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x80</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel2]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x81</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel3]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x82</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
         <group>[Channel4]</group>
-        <key>beats_translate_curpos</key>
+        <key>VestaxTR1.deckButton</key>
         <status>0x83</status>
         <midino>0x61</midino>
         <options>
-          <normal />
+          <script-binding />
         </options>
       </control>
       <control>
@@ -3053,34 +3053,6 @@
       </output>
       <output>
         <group>[Channel1]</group>
-        <key>loop_enabled</key>
-        <status>0x90</status>
-        <midino>0x4A</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[Channel2]</group>
-        <key>loop_enabled</key>
-        <status>0x91</status>
-        <midino>0x4A</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[Channel3]</group>
-        <key>loop_enabled</key>
-        <status>0x92</status>
-        <midino>0x4A</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[Channel4]</group>
-        <key>loop_enabled</key>
-        <status>0x93</status>
-        <midino>0x4A</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[Channel1]</group>
         <key>cue_indicator</key>
         <status>0x90</status>
         <midino>0x55</midino>
@@ -3360,34 +3332,6 @@
         <minimum>0.5</minimum>
       </output>
       <output>
-        <group>[EffectRack1_EffectUnit1]</group>
-        <key>mix_mode</key>
-        <status>0x94</status>
-        <midino>0x3F</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit1_Effect1]</group>
-        <key>enabled</key>
-        <status>0x94</status>
-        <midino>0x3C</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit1_Effect2]</group>
-        <key>enabled</key>
-        <status>0x94</status>
-        <midino>0x3D</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit1_Effect3]</group>
-        <key>enabled</key>
-        <status>0x94</status>
-        <midino>0x3E</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
         <group>[EffectRack1_EffectUnit2]</group>
         <key>group_[Channel1]_enable</key>
         <status>0x90</status>
@@ -3413,34 +3357,6 @@
         <key>group_[Channel4]_enable</key>
         <status>0x93</status>
         <midino>0x4E</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit2]</group>
-        <key>mix_mode</key>
-        <status>0x96</status>
-        <midino>0x3F</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit2_Effect1]</group>
-        <key>enabled</key>
-        <status>0x96</status>
-        <midino>0x3C</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit2_Effect2]</group>
-        <key>enabled</key>
-        <status>0x96</status>
-        <midino>0x3D</midino>
-        <minimum>0.5</minimum>
-      </output>
-      <output>
-        <group>[EffectRack1_EffectUnit2_Effect3]</group>
-        <key>enabled</key>
-        <status>0x96</status>
-        <midino>0x3E</midino>
         <minimum>0.5</minimum>
       </output>
     </outputs>

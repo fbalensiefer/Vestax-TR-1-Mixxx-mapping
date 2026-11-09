@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — Mixxx 2.5 live workflow
+
+- Give both FX sections distinct CHAINED and ADVANCED knob functions, a unit on/off button, and mode-aware slot LEDs.
+- Route the shared MOVE block to the MOVE CH selection for beatjumps and loop editing.
+- Track held buttons across SHIFT and deck bank changes, and rearm fader pickup when the physical source or destination changes.
+- Document the verified I.F.-CURVE setting and the MIDI and LED checks pending on the controller.
+
 ## 2026-11-03 — rekordbox 7 mapping design
 
 - Add separate native CSV drafts: core input profile and optional 16-output LED profile.
