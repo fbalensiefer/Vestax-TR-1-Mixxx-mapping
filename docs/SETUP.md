@@ -10,7 +10,7 @@ The TR-1 must appear as a MIDI input/output device in the operating system. This
 
 ## 1. Download the correct files
 
-Download the repository ZIP and extract it. The installable pair is at the repository root:
+Check out the desired branch or download and extract its ZIP. The installable pair is at the repository root:
 
 ```text
 Vestax-TR-1-2026.midi.xml
@@ -52,7 +52,7 @@ For the general controller workflow, see the [Mixxx controller documentation](ht
 
 Under **Preferences → Sound Hardware**, select your main output and, if needed, headphone output. The mapping does not select a sound card or create output routing.
 
-Select a filter as the deck Quick Effect to make FILTER behave as a filter. The FX sections control effect units 1 and 2; load effect chains/presets in Mixxx before testing the effect selectors. ADVANCED/CHAINED changes parameter visibility in this mapping, rather than remapping its knobs.
+Select a filter as the deck Quick Effect to make FILTER behave as a filter. The FX sections control effect units 1 and 2; load effect chains/presets in Mixxx before testing the effect selectors. ADVANCED remaps knobs 1–3 to the selected slot’s parameters. CHAINED returns to one meta knob per slot.
 
 ## 5. First functional check
 
@@ -61,9 +61,9 @@ Use a loaded test track and a comfortable monitoring level:
 1. Check A/B PLAY, CUE, PFL and volume, then switch to C/D and repeat.
 2. Check HI/MID/LOW, PAN (gain) and FILTER.
 3. Check tempo-fader center and direction. Direction follows the supplied 2026 mapping; this adaptation does not change that preference.
-4. Check loop activation, loop size and beatjump size on screen.
+4. Select C via MOVE CH and verify that MOVE, VALUE and the shared LOOP act on C even when the left switch is on A.
 5. Test SHIFT+SYNC: the tempo faders should control the other deck pair's volumes. Press it again to restore tempo control.
-6. Test FX routing and LEDs separately. Their inherited MIDI addresses are not fully confirmed by the recorded basic-control session.
+6. Test FX routing and LEDs with the [hardware sequence](TR-1-LIVE.de.md#kurzer-gerätetest-und-midi-aufnahme).
 
 Soft-takeover may require a physical fader to pass through its current software position before it takes effect.
 
@@ -75,11 +75,12 @@ Soft-takeover may require a physical fader to pass through its current software 
 | TR-1 is absent | Check power, USB connection and OS MIDI-device detection. |
 | Buttons work but custom functions fail | Check that the JavaScript filename matches the XML; inspect `mixxx.log` in the settings directory for script errors. |
 | Tempo slider changes another deck's volume | SHIFT+SYNC has enabled extra-deck fader mode. Toggle it off. |
-| A fader appears stuck | Move it through the on-screen value to satisfy soft-takeover. |
+| A fader appears stuck | Move it through the on-screen value to satisfy soft takeover. |
+| The LEVEL fader switches abruptly between silence and full volume | Set the front I.F.-CURVE knob around the midpoint. This restored a gradual response on A/B in a hardware check. |
 | Filter has no effect | Assign the intended Quick Effect in Mixxx. |
 | Headphones do not work independently | Configure the headphone audio output and PFL/headphone mix. |
 | FX selection has no visible effect | Ensure chains/presets are available in Mixxx and check the FX-unit panel. |
-| MOVE-CH LEDs change but another control does not follow | The inherited `currentDeck` selection updates LEDs only; it does not route other controls. |
+| MOVE CH selects a different deck from LOAD or transport | MOVE CH targets only the shared MOVE block. The two deck switches target LOAD and transport. |
 | ADVANCED/CHAINED LEDs are wrong | The supplied script marks these LED addresses as provisional. They require a hardware check. |
 
 The initial MIDI capture confirmed the basic mixer and deck channel banks on macOS, not all inherited input/output addresses. Mock-engine tests cannot establish LED color, hardware timing or complete Mixxx behavior.

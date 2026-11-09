@@ -1,64 +1,12 @@
 # Controls and behavior
 
-A/C are the left hardware bank; B/D are the right bank. They correspond to Mixxx decks 1/3 and 2/4. These assignments follow the supplied mapping. For exact MIDI addresses, see [MIDI reference](MIDI-REFERENCE.md).
+See the [German live guide](TR-1-LIVE.de.md) for every control, SHIFT functions, MIDI evidence and a short hardware test. The [MIDI reference](MIDI-REFERENCE.md) lists the preset's exact addresses.
 
-## Deck and mixer
+- Left deck switch selects A/C (1/3), right selects B/D (2/4). Transport, level, deck FX sends and LOAD follow these switches. Hold SET CUE at the paused main cue to preview, then press PLAY to continue playback or release SET CUE to return.
+- MOVE CH independently selects a deck for the shared MOVE block. Left MODE selects beatjumps, right MODE selects loop editing. VALUE halves/doubles the size, MOVE jumps or shifts the active loop, and the shared LOOP button toggles the selected deck's beatloop. The two MODE buttons use the former hotcue 3/4 addresses. MOVE replaces the former dedicated manual loop in/out actions.
+- Both FX sections use the same workflow. In CHAINED, knobs 1–3 are per-slot meta knobs, buttons 1–3 enable slots and EFFECT SELECT picks chain presets. In ADVANCED, buttons 1–3 choose a slot, knobs 1–3 control its individual parameters and EFFECT SELECT changes its effect. Knob 4 is Dry/Wet and button 4 toggles the unit in both modes. The slot LEDs show enabled slots in CHAINED and the chosen slot in ADVANCED.
+- Browser controls select the previous/next track, start preview, or load into the bank selected on either side.
+- SHIFT+SYNC switches the tempo faders between rate and opposite-bank level in a four-deck layout. BEND is temporary rate adjustment during playback and ±1 beat when paused. In the extra-fader mode BEND jumps ±1 beat, and SHIFT+BEND jumps 32 beats. Holding SHIFT+BEND− for half a second seeks to the track start.
+- Leave the front I.F.-CURVE control around its midpoint for a gradual level-fader response. After changing deck or fader mode, pass through the current Mixxx level or rate for pickup.
 
-| Control | Action |
-| --- | --- |
-| PLAY/STOP | Toggle playback; latch a held cue preview into continued playback. |
-| SET CUE | Set the main cue and enable quantize. When paused at the cue, hold to preview; release to return unless PLAY was pressed. |
-| CUE BACK/FWD | Beatjump backward/forward using Mixxx's current beatjump size. |
-| SYNC | Toggle sync. |
-| KEY button | Toggle keylock. |
-| LOOP | Activate a beatloop with Mixxx's current loop size. Reloop has its own assignment. |
-| Loop/Move controls | Loop halve/double, loop in/out and reloop; shifted assignments include hotcues and looproll. |
-| Headphone CUE | Toggle PFL for that deck. |
-| Channel fader | Deck volume. |
-| HI/MID/LOW | Three-band EQ. |
-| PAN | Deck pregain, not stereo pan. |
-| FILTER | Deck Quick Effect super knob. |
-| TEMPO | 14-bit tempo slider; original mapping direction retained. |
-| KEY knob | Original pitch-adjust assignment and inversion option retained. |
-
-Additional shifted MIDI assignments cover hotcues 1–4, slip, looproll, beatjump-size halve/double, cue return and beatgrid translation. The exact logical assignments are listed in the MIDI reference; physical SHIFT behavior beyond the basic capture requires validation.
-
-## Tempo bends and extra-deck fader mode
-
-**SHIFT+SYNC** toggles extra-deck fader mode globally.
-
-| Tempo-fader hardware bank | Normal mode | Extra-deck fader mode |
-| --- | --- | --- |
-| A | Deck 1 tempo | Deck 3 volume |
-| B | Deck 2 tempo | Deck 4 volume |
-| C | Deck 3 tempo | Deck 1 volume |
-| D | Deck 4 tempo | Deck 2 volume |
-
-| Button | Normal mode | Extra-deck fader mode |
-| --- | --- | --- |
-| BEND −/+ while playing | Temporary tempo down/up | Beatjump −/+1 beat |
-| BEND −/+ while paused | Beatjump −/+1 beat | Beatjump −/+1 beat |
-| SHIFT+BEND− | Paused: start of track. Playing: temporary fine tempo down. | Short press: −32 beats. Hold at least 500 ms: start of track. |
-| SHIFT+BEND+ | Temporary fine tempo up | +32 beats |
-
-Switching modes cancels pending long-press seeks and clears temporary bends. Soft-takeover is rearmed for rates and volumes when toggling this mode.
-
-## Effects
-
-Each FX section addresses an effect unit (1 or 2):
-
-- Knobs 1–3: meta control for effect slots 1–3.
-- Knob 4: unit Dry/Wet mix.
-- Buttons 1–3: enable/disable those effect slots.
-- Button 4: mix mode.
-- EFFECT SELECT left/right: previous/next chain preset.
-- ADVANCED/CHAINED: toggle `show_parameters` and update the mode indicator. It changes panel visibility, not knob routing.
-- Per-deck FX buttons: route that deck to unit 1 or 2.
-
-## Library, monitoring and indicators
-
-Browser assignments select the previous/next track, load the preview player and load the selected track into the active A/C or B/D bank. Master and headphone level/mix controls are mapped.
-
-MOVE-CH up/down cycles a script-local deck number and sends the corresponding indicator value. That selection is not used to redirect other controls in the inherited script.
-
-The XML includes 60 LED outputs; the script also sends mode/bend/MOVE indicators. Their existence does not establish that all physical LEDs behave correctly. FX-mode LED addresses are marked provisional in the supplied script.
+The new FX/MOVE behaviors, deck/SHIFT release paths and scripted LED messages are covered by software tests. The guide lists what remains to check on the hardware.

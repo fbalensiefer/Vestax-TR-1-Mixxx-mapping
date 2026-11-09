@@ -1,106 +1,142 @@
 // Local adaptation of the user-supplied 2026 mapping. See SOURCE.md for original-source provenance.
-// Vestax TR-1 — Mixxx script
-// Move Control A/B/C/D + FX Advanced/Chained LEDs
-//
-// Si Advance / Chained ne s'allument pas : lance Mixxx avec
-//   mixxx --controllerDebug
-// appuie sur EFFECT SELECT / ADVANCE-CHAINED, note status + midino,
-// et change FX1_ADVANCE / FX1_CHAINED / FX2_* ci-dessous.
-
+// Vestax TR-1 live workflow for Mixxx 2.5.
 var VestaxTR1 = {};
 
 VestaxTR1.connections = [];
-VestaxTR1.currentDeck = 1;
-VestaxTR1.faderMode = false; // Shift+Sync : tempo = volumes extra decks
-VestaxTR1.shiftBendMinusTimer = {};
 VestaxTR1.LONG_PRESS_MS = 500;
 VestaxTR1.BEND_MINUS = 0x52;
 VestaxTR1.BEND_PLUS = 0x53;
-VestaxTR1.FADER_MODE_NOTE = 0x5B; // Shift+Sync
+VestaxTR1.FADER_MODE_NOTE = 0x5B;
 VestaxTR1.SHIFT_BEND_MINUS = 0x5E;
 VestaxTR1.SHIFT_BEND_PLUS = 0x5F;
-
-// LEDs MOVE CH A/B/C/D (déjà bon sur le TR-1)
-VestaxTR1.MOVE_LED_STATUS = 0x98;
-VestaxTR1.MOVE_LED_NOTE = 0x68;
-
-// LEDs Advance / Chained — mêmes canaux que tes FX (0x94 = FX1, 0x96 = FX2)
-// Notes à ajuster si tes LEDs ne bougent pas (vois le debug).
-VestaxTR1.FX1_STATUS = 0x94; // ch5
-VestaxTR1.FX2_STATUS = 0x96; // ch7
-VestaxTR1.FX_SELECT_LEFT = 0x40;  // E4
-VestaxTR1.FX_SELECT_RIGHT = 0x41; // F4
-VestaxTR1.FX_MODE_NOTE = 0x42;    // F#4 Advance/Chained
 
 VestaxTR1.numDecks = function () {
     var n = engine.getValue("[App]", "num_decks");
     if (!n) {
         n = engine.getValue("[Master]", "num_decks");
     }
-    return n || 4;
+    return Math.min(n || 4, 4);
 };
 
 VestaxTR1.led = function (status, note, on) {
     midi.sendShortMsg(status, note, on ? 0x7F : 0x00);
 };
 
+VestaxTR1.deckGroup = function (deck) {
+    return "[Channel" + deck + "]";
+};
+
+VestaxTR1.moveGroup = function () {
+    if (VestaxTR1.currentDeck > VestaxTR1.numDecks()) {
+        VestaxTR1.currentDeck = 1;
+    }
+    return VestaxTR1.deckGroup(VestaxTR1.currentDeck);
+};
+
 VestaxTR1.updateMoveLeds = function () {
-    midi.sendShortMsg(
-        VestaxTR1.MOVE_LED_STATUS,
-        VestaxTR1.MOVE_LED_NOTE,
-        VestaxTR1.currentDeck - 1
-    );
-};
-
-VestaxTR1.updateFxModeLeds = function (unit) {
-    var group = "[EffectRack1_EffectUnit" + unit + "]";
-    var advanced = engine.getValue(group, "show_parameters") ? 1 : 0;
-    var status = (unit === 1) ? VestaxTR1.FX1_STATUS : VestaxTR1.FX2_STATUS;
-    // F#4 Note On 0x7F = LED Advance. Hide = éteinte.
-    midi.sendShortMsg(status, VestaxTR1.FX_MODE_NOTE, advanced ? 0x7F : 0x00);
-};
-
-VestaxTR1.initDeckLeds = function (deckIndex) {
-    var i;
-    for (i = 0x4B; i <= 0x56; i++) {
-        midi.sendShortMsg(0x90 + deckIndex, i, 0x00);
+    var group = VestaxTR1.moveGroup();
+    midi.sendShortMsg(0x98, 0x68, VestaxTR1.currentDeck - 1);
+    var active = engine.getValue(group, "loop_enabled");
+    for (var bank = 0; bank < 4; bank++) {
+        VestaxTR1.led(0x90 + bank, 0x4A, active);
     }
 };
 
-VestaxTR1.init = function (id, debug) {
-    VestaxTR1.id = id;
-    VestaxTR1.debug = debug;
-    VestaxTR1.currentDeck = 1;
+VestaxTR1.fxGroup = function (unit, slot) {
+    return "[EffectRack1_EffectUnit" + unit + (slot ? "_Effect" + slot : "") + "]";
+};
 
+VestaxTR1.fxFocus = function (unit) {
+    var focus = engine.getValue(VestaxTR1.fxGroup(unit), "focused_effect");
+    return focus >= 1 && focus <= 3 ? focus : 0;
+};
+
+VestaxTR1.updateFxLeds = function (unit) {
+    var status = unit === 1 ? 0x94 : 0x96;
+    var focus = VestaxTR1.fxFocus(unit);
+    for (var slot = 1; slot <= 3; slot++) {
+        var effect = VestaxTR1.fxGroup(unit, slot);
+        VestaxTR1.led(status, 0x3B + slot, focus ? focus === slot :
+            engine.getValue(effect, "loaded") && engine.getValue(effect, "enabled"));
+    }
+    VestaxTR1.led(status, 0x3F, engine.getValue(VestaxTR1.fxGroup(unit), "enabled"));
+    // Inherited address. Verify the physical ADVANCED/CHAINED indicator on the TR-1.
+    VestaxTR1.led(status, 0x42, focus !== 0);
+};
+
+VestaxTR1.watch = function (group, key, callback) {
+    VestaxTR1.connections.push(engine.makeConnection(group, key, callback));
+};
+
+VestaxTR1.armFxSlot = function (unit, slot) {
+    var group = VestaxTR1.fxGroup(unit, slot);
+    ["meta", "parameter1", "parameter2", "parameter3"].forEach(function (key) {
+        engine.softTakeoverIgnoreNextValue(group, key);
+    });
+};
+
+VestaxTR1.setupFx = function (unit) {
+    var group = VestaxTR1.fxGroup(unit);
+    var update = function () { VestaxTR1.updateFxLeds(unit); };
+    engine.setValue(group, "show_focus", VestaxTR1.fxFocus(unit) ? 1 : 0);
+    VestaxTR1.watch(group, "enabled", update);
+    VestaxTR1.watch(group, "focused_effect", function () {
+        var focus = VestaxTR1.fxFocus(unit);
+        engine.setValue(group, "show_focus", focus ? 1 : 0);
+        if (focus) {
+            VestaxTR1.lastFxFocus[unit] = focus;
+        }
+        for (var slot = 1; slot <= 3; slot++) {
+            VestaxTR1.armFxSlot(unit, slot);
+        }
+        update();
+    });
+    function watchSlot(slot) {
+        var effect = VestaxTR1.fxGroup(unit, slot);
+        ["meta", "parameter1", "parameter2", "parameter3"].forEach(function (key) {
+            engine.softTakeover(effect, key, true);
+        });
+        VestaxTR1.watch(effect, "enabled", update);
+        VestaxTR1.watch(effect, "loaded", update);
+        VestaxTR1.watch(effect, "loaded_effect", function () {
+            VestaxTR1.armFxSlot(unit, slot);
+            update();
+        });
+    }
+    for (var slot = 1; slot <= 3; slot++) {
+        watchSlot(slot);
+    }
+    update();
+};
+
+VestaxTR1.init = function () {
+    VestaxTR1.currentDeck = 1;
+    VestaxTR1.moveLoop = false;
+    VestaxTR1.lastFxFocus = [0, 1, 1];
+    VestaxTR1.faderMode = false;
+    VestaxTR1.faderTargets = {};
+    VestaxTR1.faderSources = {};
+    VestaxTR1.heldButtons = {};
     VestaxTR1.cueHeld = {};
     VestaxTR1.cueLatched = {};
     VestaxTR1.shiftBendMinusTimer = {};
-    for (var deckIndex = 0; deckIndex < 4; deckIndex++) {
-        VestaxTR1.initDeckLeds(deckIndex);
-    }
-    VestaxTR1.updateMoveLeds();
-    VestaxTR1.updateFxModeLeds(1);
-    VestaxTR1.updateFxModeLeds(2);
-
-    VestaxTR1.connections.push(engine.makeConnection("[EffectRack1_EffectUnit1]", "show_parameters", function () {
-        VestaxTR1.updateFxModeLeds(1);
-    }));
-    VestaxTR1.connections.push(engine.makeConnection("[EffectRack1_EffectUnit2]", "show_parameters", function () {
-        VestaxTR1.updateFxModeLeds(2);
-    }));
-
     engine.softTakeover("[Master]", "gain", true);
     engine.softTakeover("[Master]", "headGain", true);
-    engine.softTakeover("[Channel1]", "rate", true);
-    engine.softTakeover("[Channel2]", "rate", true);
-    engine.softTakeover("[Channel3]", "rate", true);
-    engine.softTakeover("[Channel4]", "rate", true);
-    engine.softTakeover("[Channel1]", "volume", true);
-    engine.softTakeover("[Channel2]", "volume", true);
-    engine.softTakeover("[Channel3]", "volume", true);
-    engine.softTakeover("[Channel4]", "volume", true);
-
-    VestaxTR1.faderMode = false;
+    for (var deck = 1; deck <= 4; deck++) {
+        var group = VestaxTR1.deckGroup(deck);
+        engine.softTakeover(group, "rate", true);
+        engine.softTakeover(group, "volume", true);
+        VestaxTR1.watch(group, "loop_enabled", VestaxTR1.updateMoveLeds);
+    }
+    VestaxTR1.watch("[App]", "num_decks", function () {
+        if (VestaxTR1.faderMode && VestaxTR1.numDecks() < 4) {
+            VestaxTR1.shiftBendPlus(0, VestaxTR1.FADER_MODE_NOTE, 1);
+        }
+        VestaxTR1.updateMoveLeds();
+    });
+    VestaxTR1.setupFx(1);
+    VestaxTR1.setupFx(2);
+    VestaxTR1.updateMoveLeds();
     VestaxTR1.setBendLeds(false);
     VestaxTR1.setFaderModeLeds(false);
 };
@@ -124,8 +160,18 @@ VestaxTR1.shutdown = function () {
     VestaxTR1.cancelTransientControls();
     VestaxTR1.connections.forEach(function (connection) { connection.disconnect(); });
     VestaxTR1.connections = [];
-    midi.sendShortMsg(VestaxTR1.FX1_STATUS, VestaxTR1.FX_MODE_NOTE, 0x00);
-    midi.sendShortMsg(VestaxTR1.FX2_STATUS, VestaxTR1.FX_MODE_NOTE, 0x00);
+    Object.keys(VestaxTR1.heldButtons).forEach(function (button) {
+        VestaxTR1.runDeckButton(VestaxTR1.heldButtons[button], 0);
+    });
+    VestaxTR1.heldButtons = {};
+    [0x94, 0x96].forEach(function (status) {
+        [0x3C, 0x3D, 0x3E, 0x3F, 0x42].forEach(function (note) {
+            VestaxTR1.led(status, note, false);
+        });
+    });
+    for (var bank = 0; bank < 4; bank++) {
+        VestaxTR1.led(0x90 + bank, 0x4A, false);
+    }
     VestaxTR1.setBendLeds(false);
     VestaxTR1.setFaderModeLeds(false);
 };
@@ -155,84 +201,133 @@ VestaxTR1.setFaderModeLeds = function (on) {
     }
 };
 
-// 0x5B : active / coupe le fader mode (LEDs Bend inchangées)
 VestaxTR1.shiftBendPlus = function (channel, control, value) {
-    if (value !== 0x7F) {
+    if (!value || (!VestaxTR1.faderMode && VestaxTR1.numDecks() < 4)) {
         return;
     }
     VestaxTR1.cancelTransientControls();
     VestaxTR1.faderMode = !VestaxTR1.faderMode;
+    VestaxTR1.faderTargets = {};
+    VestaxTR1.faderSources = {};
     VestaxTR1.setBendLeds(VestaxTR1.faderMode);
     VestaxTR1.setFaderModeLeds(VestaxTR1.faderMode);
-    engine.softTakeoverIgnoreNextValue("[Channel1]", "rate");
-    engine.softTakeoverIgnoreNextValue("[Channel2]", "rate");
-    engine.softTakeoverIgnoreNextValue("[Channel3]", "rate");
-    engine.softTakeoverIgnoreNextValue("[Channel4]", "rate");
-    engine.softTakeoverIgnoreNextValue("[Channel1]", "volume");
-    engine.softTakeoverIgnoreNextValue("[Channel2]", "volume");
-    engine.softTakeoverIgnoreNextValue("[Channel3]", "volume");
-    engine.softTakeoverIgnoreNextValue("[Channel4]", "volume");
 };
 
 VestaxTR1.selectUp = function (channel, control, value) {
-    if (value !== 0x7F) {
-        return;
+    if (value) {
+        VestaxTR1.moveGroup();
+        VestaxTR1.currentDeck = VestaxTR1.currentDeck % VestaxTR1.numDecks() + 1;
+        VestaxTR1.updateMoveLeds();
     }
-    VestaxTR1.currentDeck += 1;
-    if (VestaxTR1.currentDeck > VestaxTR1.numDecks()) {
-        VestaxTR1.currentDeck = 1;
-    }
-    VestaxTR1.updateMoveLeds();
 };
 
 VestaxTR1.selectDown = function (channel, control, value) {
-    if (value !== 0x7F) {
+    if (value) {
+        VestaxTR1.moveGroup();
+        VestaxTR1.currentDeck = VestaxTR1.currentDeck === 1 ?
+            VestaxTR1.numDecks() : VestaxTR1.currentDeck - 1;
+        VestaxTR1.updateMoveLeds();
+    }
+};
+
+VestaxTR1.toggleLoop = function (group) {
+    engine.setValue(group, engine.getValue(group, "loop_enabled") ?
+        "reloop_toggle" : "beatloop_activate", 1);
+};
+
+VestaxTR1.moveControl = function (channel, control, value) {
+    if (!value) {
         return;
     }
-    VestaxTR1.currentDeck -= 1;
-    if (VestaxTR1.currentDeck < 1) {
-        VestaxTR1.currentDeck = VestaxTR1.numDecks();
+    var group = VestaxTR1.moveGroup();
+    switch (control) {
+    case 0x44:
+    case 0x45:
+        var size = VestaxTR1.moveLoop ? "loop_" : "beatjump_size_";
+        engine.setValue(group, size + (control === 0x44 ? "halve" : "double"), 1);
+        break;
+    case 0x46:
+    case 0x47:
+        if (VestaxTR1.moveLoop) {
+            if (engine.getValue(group, "loop_enabled")) {
+                engine.setValue(group, "loop_move", control === 0x46 ? -1 : 1);
+            }
+        } else {
+            engine.setValue(group, control === 0x46 ? "beatjump_backward" : "beatjump_forward", 1);
+        }
+        break;
+    case 0x48:
+    case 0x49:
+        VestaxTR1.moveLoop = control === 0x49;
+        break;
+    case 0x4A:
+        VestaxTR1.toggleLoop(group);
+        break;
     }
-    VestaxTR1.updateMoveLeds();
 };
 
-// Bouton mode FX1 : chained <-> advanced (Mixxx = show_parameters)
-VestaxTR1.fx1Mode = function (channel, control, value) {
-    if (value !== 0x7F) {
+VestaxTR1.fxKnob = function (channel, control, value) {
+    var unit = channel === 4 ? 1 : 2;
+    var knob = control - 0x17;
+    var focus = VestaxTR1.fxFocus(unit);
+    var group = VestaxTR1.fxGroup(unit, focus || knob);
+    var key = focus ? "parameter" + knob : "meta";
+    if (engine.getValue(group, focus ? key + "_loaded" : "loaded")) {
+        engine.setParameter(group, key, value / 127);
+    }
+};
+
+VestaxTR1.fxButton = function (channel, control, value) {
+    if (!value) {
         return;
     }
-    script.toggleControl("[EffectRack1_EffectUnit1]", "show_parameters");
-};
-
-VestaxTR1.fx2Mode = function (channel, control, value) {
-    if (value !== 0x7F) {
-        return;
-    }
-    script.toggleControl("[EffectRack1_EffectUnit2]", "show_parameters");
-};
-
-// EFFECT SELECT < / >  = effet précédent / suivant de l'unité
-VestaxTR1.fx1Prev = function (channel, control, value) {
-    if (value === 0x7F) {
-        engine.setValue("[EffectRack1_EffectUnit1]", "prev_chain_preset", 1);
-    }
-};
-
-VestaxTR1.fx1Next = function (channel, control, value) {
-    if (value === 0x7F) {
-        engine.setValue("[EffectRack1_EffectUnit1]", "next_chain_preset", 1);
-    }
-};
-
-VestaxTR1.fx2Prev = function (channel, control, value) {
-    if (value === 0x7F) {
-        engine.setValue("[EffectRack1_EffectUnit2]", "prev_chain_preset", 1);
+    var unit = channel === 4 ? 1 : 2;
+    var group = VestaxTR1.fxGroup(unit);
+    var focus = VestaxTR1.fxFocus(unit);
+    if (control <= 0x3E) {
+        var slot = control - 0x3B;
+        if (focus) {
+            engine.setValue(group, "focused_effect", slot);
+        } else {
+            var effect = VestaxTR1.fxGroup(unit, slot);
+            if (engine.getValue(effect, "loaded")) {
+                script.toggleControl(effect, "enabled");
+            }
+        }
+    } else if (control === 0x3F) {
+        script.toggleControl(group, "enabled");
+    } else if (control === 0x42) {
+        if (focus) {
+            VestaxTR1.lastFxFocus[unit] = focus;
+        }
+        engine.setValue(group, "focused_effect", focus ? 0 : VestaxTR1.lastFxFocus[unit]);
+        engine.setValue(group, "show_parameters", focus ? 0 : 1);
+    } else {
+        engine.setValue(focus ? VestaxTR1.fxGroup(unit, focus) : group,
+            focus ? "effect_selector" : "chain_preset_selector", control === 0x40 ? -1 : 1);
     }
 };
 
-VestaxTR1.fx2Next = function (channel, control, value) {
-    if (value === 0x7F) {
-        engine.setValue("[EffectRack1_EffectUnit2]", "next_chain_preset", 1);
+// Each physical fader must pick up again after its target changes, including
+// when the level and tempo faders take turns controlling the same volume.
+VestaxTR1.writeFader = function (source, group, key, value) {
+    var target = group + key;
+    if (VestaxTR1.faderTargets[source] !== target || VestaxTR1.faderSources[target] !== source) {
+        engine.softTakeoverIgnoreNextValue(group, key);
+        VestaxTR1.faderTargets[source] = target;
+        VestaxTR1.faderSources[target] = source;
+    }
+    if (key === "volume") {
+        // Use the same normalized audio taper as the native MIDI fader.
+        engine.setParameter(group, key, value);
+    } else {
+        engine.setValue(group, key, value);
+    }
+};
+
+VestaxTR1.volume = function (channel, control, value, status, group) {
+    if (channel < VestaxTR1.numDecks()) {
+        VestaxTR1.writeFader("volume" + channel % 2, group, "volume", value / 127);
     }
 };
 
@@ -244,23 +339,17 @@ VestaxTR1.rate = function (channel, control, value, status, group) {
     // Exact center and endpoints; do not exceed [-1, 1] at raw zero.
     var raw = (value << 7) | control;
     var pitch = raw < 8192 ? (raw - 8192) / 8192 : (raw - 8192) / 8191;
-    if (VestaxTR1.faderMode) {
-        var volGroup = null;
-        if (status === 0xE9) {
-            volGroup = "[Channel3]";
-        } else if (status === 0xEA) {
-            volGroup = "[Channel4]";
-        } else if (status === 0xEB) {
-            volGroup = "[Channel1]";
-        } else if (status === 0xEC) {
-            volGroup = "[Channel2]";
-        }
-        if (volGroup) {
-            engine.setValue(volGroup, "volume", (1 - pitch) / 2);
-            return;
-        }
+    var bank = status - 0xE9;
+    if (bank >= VestaxTR1.numDecks()) {
+        return;
     }
-    engine.setValue(group, "rate", -pitch);
+    var source = "tempo" + bank % 2;
+    var otherDeck = [3, 4, 1, 2][bank];
+    if (VestaxTR1.faderMode && otherDeck <= VestaxTR1.numDecks()) {
+        VestaxTR1.writeFader(source, VestaxTR1.deckGroup(otherDeck), "volume", (1 - pitch) / 2);
+    } else {
+        VestaxTR1.writeFader(source, group, "rate", -pitch);
+    }
 };
 
 // 0x5E = Shift + Bend-
@@ -325,8 +414,7 @@ VestaxTR1.bend = function (channel, control, value, status, group) {
         VestaxTR1.setBendLed(status, control, !value);
     }
     if (!value) {
-        engine.setValue(group, "rate_temp_down", 0);
-        engine.setValue(group, "rate_temp_up", 0);
+        engine.setValue(group, down ? "rate_temp_down" : "rate_temp_up", 0);
         return;
     }
     if (VestaxTR1.faderMode || !engine.getValue(group, "play")) {
@@ -385,10 +473,63 @@ VestaxTR1.play = function (channel, control, value, status, group) {
     script.toggleControl(group, "play");
 };
 
-// Normalize MIDI Note Off release velocity for scripted button routes.
-["fx1Prev", "fx1Next", "fx2Prev", "fx2Next", "fx1Mode", "fx2Mode",
- "selectUp", "selectDown", "shiftBendPlus", "shiftBendMinus",
- "shiftBendPlusFine", "bend", "cue", "play"].forEach(function (name) {
+// A firmware release can arrive under the shifted note or the other deck
+// of the same physical side. Keep the action and target from the press.
+VestaxTR1.physicalNotes = {
+    0x58: 0x4C, 0x59: 0x4D, 0x5A: 0x4E,
+    0x5E: 0x52, 0x5F: 0x53, 0x61: 0x55
+};
+VestaxTR1.momentaryKeys = {
+    0x58: "beatlooproll_activate",
+    0x59: "hotcue_1_activate",
+    0x5A: "hotcue_2_activate"
+};
+
+VestaxTR1.deckButton = function (channel, control, value, status, group) {
+    var physical = VestaxTR1.physicalNotes[control] || control;
+    var button = (channel % 2) + ":" + physical;
+    var held = VestaxTR1.heldButtons[button];
+    if (!value) {
+        if (held) {
+            VestaxTR1.runDeckButton(held, 0);
+            delete VestaxTR1.heldButtons[button];
+        }
+        return;
+    }
+    if (held || channel >= VestaxTR1.numDecks()) {
+        return;
+    }
+    var action = {channel: channel, note: control, group: group};
+    VestaxTR1.heldButtons[button] = action;
+    VestaxTR1.runDeckButton(action, value);
+};
+
+VestaxTR1.runDeckButton = function (action, value) {
+    var note = action.note;
+    var group = action.group;
+    var channel = action.channel;
+    var status = 0x90 + channel;
+    if (VestaxTR1.momentaryKeys[note]) {
+        engine.setValue(group, VestaxTR1.momentaryKeys[note], value ? 1 : 0);
+    } else if (note === 0x52 || note === 0x53) {
+        VestaxTR1.bend(channel, note, value, status, group);
+    } else if (note === 0x5E) {
+        VestaxTR1.shiftBendMinus(channel, note, value, status, group);
+    } else if (note === 0x5F) {
+        VestaxTR1.shiftBendPlusFine(channel, note, value, status, group);
+    } else if (note === 0x55) {
+        VestaxTR1.cue(channel, note, value, status, group);
+    } else if (value && note === 0x4C) {
+        VestaxTR1.toggleLoop(group);
+    } else if (value && (note === 0x4D || note === 0x4E)) {
+        script.toggleControl(VestaxTR1.fxGroup(note === 0x4D ? 1 : 2), "group_" + group + "_enable");
+    } else if (value && note === 0x61 && !engine.getValue(group, "play")) {
+        engine.setValue(group, "beats_translate_curpos", 1);
+    }
+};
+
+// Normalize Note Off release velocity at the MIDI entry points.
+["fxButton", "moveControl", "deckButton", "selectUp", "selectDown", "shiftBendPlus", "play"].forEach(function (name) {
     var handler = VestaxTR1[name];
     VestaxTR1[name] = function (channel, control, value, status, group) {
         return handler(channel, control, (status & 0xF0) === 0x80 ? 0 : value, status, group);

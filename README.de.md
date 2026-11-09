@@ -2,7 +2,7 @@
 
 Vier-Deck-Mapping für den **Vestax TR-1** und **Mixxx 2.5**, auf Grundlage der bereitgestellten 2026-Version.
 
-[English](README.md) · [Ausführliches Setup (Englisch)](docs/SETUP.md) · [Belegung](docs/CONTROLS.md)
+[English](README.md) · [Ausführliches Setup (Englisch)](docs/SETUP.md) · [Kurzanleitung und Gerätetest](docs/TR-1-LIVE.de.md)
 
 ## Erweiterung für rekordbox
 
@@ -10,7 +10,7 @@ Das Projekt enthält jetzt zusätzlich ein [rekordbox-7-Mapping-Design mit deuts
 
 ## Installation
 
-1. Auf GitHub **Code → Download ZIP** wählen und das Archiv entpacken.
+1. Den gewünschten Branch auschecken oder ihn auf GitHub über **Code → Download ZIP** herunterladen und entpacken.
 2. In Mixxx **Einstellungen → Bibliothek → Mixxx-Einstellungsordner öffnen** wählen. Darin den Ordner `controllers` öffnen.
 3. Diese **beiden Dateien aus dem Hauptordner** hineinkopieren:
    - `Vestax-TR-1-2026.midi.xml`
@@ -32,8 +32,8 @@ Die unveränderten Ausgangsdateien werden nicht veröffentlicht; ihre Herkunft i
 | PLAY / SET CUE | Wiedergabe und eigener Cue-Modus mit Vorhören und PLAY-Latch |
 | CUE BACK / FWD | Beatjump in der in Mixxx eingestellten Sprungweite |
 | SYNC / KEY | Sync / Keylock |
-| LOOP / Move-Tasten | Loop aktivieren, halbieren/verdoppeln, In/Out und Reloop |
-| FX-Sektionen | Effekt-Meta-Regler, Dry/Wet, Ein/Aus, Routing und Ketten-Presets |
+| LOOP / Move-Tasten | Deck-Loop ein/aus. Das gemeinsame MOVE-Feld nutzt die separate Deckwahl per MOVE CH. |
+| FX-Sektionen | CHAINED steuert drei Slots. ADVANCED bearbeitet drei Parameter eines Slots. Regler 4 bleibt Dry/Wet, Taste 4 schaltet die Einheit. |
 | SHIFT + SYNC | Zusätzlichen Fader-Modus ein/aus |
 
 Im zusätzlichen Fader-Modus steuern die TEMPO-Fader A/B die Lautstärke von C/D, und die TEMPO-Fader C/D die Lautstärke von A/B. BEND springt dann ±1 Beat. SHIFT+BEND+ springt 32 Beats vor; SHIFT+BEND− springt kurz gedrückt 32 Beats zurück und lang gedrückt zum Trackanfang.
@@ -44,6 +44,7 @@ SET CUE aktiviert Quantize. Bei Pause am vorhandenen Cue-Punkt startet gedrückt
 
 - **Preset fehlt:** Beide Dateien in den aktiven Mixxx-Einstellungsordner kopieren und neu starten; auf doppelte Dateiendungen wie `.xml.txt` achten.
 - **Controller fehlt:** USB-Verbindung und Stromversorgung prüfen, Gerät einschalten und Mixxx erneut öffnen.
+- **LEVEL kennt nur an/aus:** Den vorderen I.F.-CURVE-Regler etwa mittig stellen. Das wurde für A/B am Gerät bestätigt.
 - **Regler reagiert erst später:** Soft-Takeover kann aktiv sein. Den physischen Regler über den aktuellen Bildschirmwert bewegen.
 - **TEMPO verändert Lautstärke:** SHIFT+SYNC schaltet den zusätzlichen Fader-Modus zurück.
 - **Kein Filtereffekt:** In Mixxx einen Filter als Quick Effect auswählen.
@@ -52,6 +53,6 @@ SET CUE aktiviert Quantize. Bei Pause am vorhandenen Cue-Punkt startet gedrückt
 
 ## Prüfstand und Herkunft
 
-Die Grundadressen wurden an einem TR-1 auf macOS erfasst. Automatische Tests prüfen unter anderem die hochauflösenden Tempo-Fader, Releases, Cue/PLAY und Timer-Abbruch. Die vollständige FX-, SHIFT- und LED-Funktion in Mixxx sowie Windows/Linux sind noch nicht praktisch bestätigt.
+Grundadressen und die I.F.-CURVE-Einstellung für A/B stammen aus früheren Gerätetests unter macOS. Automatische Tests prüfen unter anderem FX-Modi und LED-Zustände, MOVE-Zielwahl, Cue/PLAY und Loslassen nach einem Deck- oder SHIFT-Wechsel. Die neue Belegung lässt sich mit der [kurzen Testsequenz](docs/TR-1-LIVE.de.md#kurzer-gerätetest-und-midi-aufnahme) am TR-1 prüfen.
 
 Die Vorlage nennt Danny Ricard-Lavergne als Autor. Die Originaldateien werden nicht mitveröffentlicht. [Änderungen](CHANGELOG.md) und [Herkunft/Lizenzstatus](NOTICE.md) sind dokumentiert; es wird keine neue Lizenz für fremde Bestandteile vergeben.

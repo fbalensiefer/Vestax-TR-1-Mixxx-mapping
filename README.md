@@ -1,6 +1,6 @@
 # Vestax TR-1 Custom Mapping for Mixxx
 
-A four-deck MIDI mapping for the **Vestax TR-1**, targeting **Mixxx 2.5**. Based on a user-supplied 2026 mapping, with fixes for MIDI releases, tempo-fader limits and script cleanup.
+A four-deck MIDI mapping for the **Vestax TR-1**, targeting **Mixxx 2.5**. Based on a user-supplied 2026 mapping, with two FX modes, a shared MOVE block, and deck-safe button releases.
 
 **[Deutsche Anleitung](README.de.md)** · **[Setup](docs/SETUP.md)** · **[Controls](docs/CONTROLS.md)** · **[MIDI reference](docs/MIDI-REFERENCE.md)**
 
@@ -10,7 +10,7 @@ A separate [rekordbox 7 mapping design](rekordbox/README.md) now includes two na
 
 ## Install in five steps
 
-1. Download this repository using **Code → Download ZIP** and extract it.
+1. Check out the desired branch or download its ZIP using **Code → Download ZIP**.
 2. In Mixxx, open **Preferences → Library → Open Mixxx Settings Directory**, then open its `controllers` folder.
 3. Copy **both root files** into that folder:
    - `Vestax-TR-1-2026.midi.xml`
@@ -24,16 +24,15 @@ Copy the files from the repository root. The unmodified source files are not dis
 
 - A/C and B/D deck banks; volume, three-band EQ, gain and Quick Effect filter.
 - Play, custom cue preview with PLAY latch, sync, keylock, loops, beatjump and hotcues.
-- Two FX units with three effect meta controls each, Dry/Wet, deck routing and chain-preset selection.
+- Two FX units with chain and individual-effect modes, Dry/Wet, unit bypass and per-deck routing.
+- Independent MOVE CH target for the shared beatjump and loop controls.
 - Browser navigation, deck loading, preview-player loading and headphone controls.
 - SHIFT functions, temporary tempo bends and a mode that uses tempo faders for the other two decks' volumes.
-- XML LED outputs and scripted mode indicators inherited from the supplied mapping.
+- Deck LEDs and scripted FX, MOVE and fader-mode feedback.
 
 ## Status
 
-The basic MIDI addresses were checked against a physical TR-1 on macOS. The software tests check all 16,384 tempo-fader values on each deck, extra-deck volume routing, release handling, cue/PLAY latching and timer cleanup. XML tests check routing consistency, the recorded basic-control addresses and matching Note Off releases.
-
-**This is not a claim of complete hardware validation.** FX, SHIFT and LED behavior still need an end-to-end check in Mixxx. Windows and Linux installation steps are documented, but were not tested on those systems. See [known limitations and troubleshooting](docs/SETUP.md#troubleshooting).
+Basic MIDI addresses and the I.F.-CURVE setting for A/B were checked on a physical TR-1 on macOS. Software tests cover the tempo faders, deck and SHIFT releases, FX modes/routing/LED messages, MOVE targeting and fader pickup calls. The [live guide](docs/TR-1-LIVE.de.md) includes a hardware test for the new behavior.
 
 ## Development
 
@@ -44,6 +43,6 @@ node tests/test-mapping.js
 python3 tests/test_xml.py
 ```
 
-The current preset has 190 inherited input routes, 143 additional Note Off routes and 60 XML LED outputs. See [changes](CHANGELOG.md) and [attribution and license status](NOTICE.md). This project does not assign a new license to the supplied mapping.
+The current preset has 190 primary input routes, 143 explicit Note Off routes and 48 XML LED outputs plus scripted feedback. See [changes](CHANGELOG.md) and [attribution and license status](NOTICE.md). This project does not assign a new license to the supplied mapping.
 
 This is an independent community mapping; no affiliation with Vestax or Mixxx is implied.
